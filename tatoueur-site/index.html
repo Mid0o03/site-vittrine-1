@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Ink Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fade-in">
+    <nav>
+      <h1>Black Ink Studio</h1>
+      <div class="burger" id="burger">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prestation.html">Prestations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+      <h2>L'art du tatouage, au cœur de la peau.</h2>
+      <p>Studio de tatouage professionnel à Paris depuis 2015.</p>
+      <a href="contact.html" class="btn">Prendre rendez-vous</a>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Black Ink Studio – Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("nav-links");
+
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Animation fade-in
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Black Ink Studio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Ton CSS principal -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Black Ink Studio</h1>
+      <div class="burger" id="burger">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prestations.html">Prestations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact fade-in">
+      <h2>Contactez-nous</h2>
+      <p>Une question ? Une envie de tatouage ? Laissez-nous un message !</p>
+
+      <form class="contact-form fade-in" action="#" method="post">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+
+      <div class="infos fade-in">
+        <h3>Studio Black Ink</h3>
+        <p>123 Rue des Artistes<br>75000 Paris</p>
+        <p>Tél : 01 23 45 67 89</p>
+        <p>Email : contact@blackink.fr</p>
+        <p>Horaires : Lun - Sam, 10h - 19h</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Black Ink Studio – Tous droits réservés</p>
+  </footer>
+
+  <!-- Script menu burger -->
+  <script>
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("nav-links");
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+  <!-- Script animation scroll -->
+  <script>
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

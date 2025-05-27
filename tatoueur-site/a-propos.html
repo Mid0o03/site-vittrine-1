@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos – Black Ink Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fade-in">
+    <nav>
+      <h1>Black Ink Studio</h1>
+      <div class="burger" id="burger">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prestations.html">Prestations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about fade-in">
+      <div class="about-content">
+        <div class="text">
+          <h2>À propos du studio</h2>
+          <p>
+            Bienvenue chez <strong>Black Ink Studio</strong>, un salon de tatouage fondé par un passionné de l'art corporel.
+            Depuis plus de 10 ans, nous créons des tatouages uniques, porteurs de sens, dans un cadre chaleureux et professionnel.
+          </p>
+          <p>
+            Notre approche repose sur l’écoute, la créativité et la rigueur. Que vous ayez une idée précise ou que vous cherchiez l'inspiration,
+            nous vous accompagnons dans chaque étape de votre projet.
+          </p>
+          <p>
+            Spécialisé dans les styles <em>noir & gris, lettrage, recouvrement</em>, notre tatoueur met un point d’honneur à respecter votre peau et vos attentes.
+          </p>
+        </div>
+        <div class="image fade-in">
+          <img src="image/portrait-tatoueur.jpeg" alt="Portrait du tatoueur" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Black Ink Studio – Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Menu burger
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("nav-links");
+
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Fade-in animation
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+/*index page*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'segoe UI', sans-serif;
+    line-height:1.6;
+    background-color:#111;
+    color:#eee;
+}
+header{
+    background:#000;
+    padding:20px;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav>h1{
+    font-size:1.8rem;
+    color:#fff
+}
+nav>ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+nav>a{
+    color:#ccc;
+    text-decoration:none;
+    transition:color 0.3s;
+}
+nav>a:hover{
+    color:#fff;
+}
+.hero {
+  height: 100vh;
+  color: white;
+  background: url('../image/tatoueur2.jpeg')center/cover no-repeat;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+.hero .btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 25px;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:4px;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#777;
+    font-size:0.9rem;
+}
+/*presenation page*/
+.services {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/*gallerie page*/
+.galerie {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.galerie h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*a propos page*/
+.about {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  color: #eee;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about .text {
+  flex: 1 1 50%;
+}
+
+.about .text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about .text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.about .image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.about .image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/*contact page*/
+.contact {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  color: #eee;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.contact-form {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid #555;
+}
+
+.btn {
+  background: #fff;
+  color: #000;
+  padding: 12px 25px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ddd;
+}
+
+.infos {
+  margin-top: 40px;
+  text-align: left;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+}
+/*menu responsive*/
+/* Nav responsive */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav .burger {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+/*google font*/
+body {
+  font-family: 'Inter', sans-serif;
+}
+/*animation scroll*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

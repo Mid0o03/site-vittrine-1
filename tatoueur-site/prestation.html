@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Ink Studio – Prestations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- fade-in CSS -->
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fade-in">
+    <nav>
+      <h1>Black Ink Studio</h1>
+      <div class="burger" id="burger">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prestation.html">Prestations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services fade-in">
+      <h2>Nos Prestations</h2>
+      <div class="grid">
+        <div class="service">
+          <img src="image/noir-gris.jpeg" alt="Tatouage noir et gris">
+          <h3>Noir & Gris</h3>
+          <p>Un style classique et intemporel, parfait pour les portraits et les ombrages détaillés.</p>
+        </div>
+        <div class="service">
+          <img src="image/couleur.jpeg" alt="Tatouage couleur">
+          <h3>Couleur</h3>
+          <p>Des œuvres vibrantes et expressives qui attirent tous les regards.</p>
+        </div>
+        <div class="service">
+          <img src="image/lettrage.jpeg" alt="Tatouage lettrage">
+          <h3>Lettrage</h3>
+          <p>Des mots puissants, des citations ou des noms avec un style typographique unique.</p>
+        </div>
+        <div class="service">
+          <img src="image/cover.jpeg" alt="Tatouage recouvrement">
+          <h3>Cover / Recouvrement</h3>
+          <p>Envie d'effacer un ancien tatouage ? On crée une nouvelle œuvre par-dessus.</p>
+        </div>
+        <div class="service">
+          <img src="image/dessin.jpeg" alt="Tatouage personnalisé">
+          <h3>Dessin personnalisé</h3>
+          <p>Une création 100% unique, faite selon vos idées et vos inspirations.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Black Ink Studio – Tous droits réservés</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Menu burger
+    const burger = document.getElementById("burger");
+    const navLinks = document.getElementById("nav-links");
+
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Fade-in animation
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
